@@ -26,3 +26,46 @@ Sigue las **[instrucciones](../../README.md)**, consulta las correcciones y apor
 
 > Recuerda que cada semana se publica un nuevo ejercicio y se corrige el de la semana anterior en directo desde **[Twitch](https://twitch.tv/mouredev)**. Tienes el horario en la sección "eventos" del servidor de **[Discord](https://discord.gg/mouredev)**.
 '''
+import re 
+
+cadena  = "Hola Mundo"
+len(cadena) # 9
+cadena[0] # H
+subcadena = cadena[0:4] # Hola
+cadena2 = " python"
+cadena + cadena2 
+cadena.upper() # HOLA MUNDO
+cadena.lower() # hola mundo
+cadena.replace("Hola", "Adios")
+cadena.strip()
+cadena.startswith("Hola")
+cadena.endswith("Mundo")
+cadena.find("Mundo")
+x , y= cadena.split(" ")
+verificacion = "Hola" in cadena
+verificacion2 = "Hola" not in cadena
+
+
+def comprobaciones(palabra1, palabra2):
+    if palindromo(palabra1,palabra2):
+        print("Es palindromo")
+    if anagrama(palabra1, palabra2):
+        print("Es anagrama")
+    if isograma(palabra1):
+        print("Es isograma")
+
+def palindromo(palabra1 , palabra2):
+    print(f"la palabra {palabra1} es palindromo {palabra1 == palabra1[::-1]}")
+    print(f"la palabra {palabra2} es palindromo {palabra2 == palabra2[::-1]}")
+
+def anagrama(palabra1, palabra2):   
+    if sorted(palabra1) == sorted(palabra2):
+        return True
+    else:
+        return False
+    
+def  isograma(palabra1):
+    if len(palabra1) == len(set(palabra1)):
+        return True
+
+comprobaciones("amor","roma")
