@@ -51,8 +51,8 @@ def comprobaciones(palabra1, palabra2):
         print("Es palindromo")
     if anagrama(palabra1, palabra2):
         print("Es anagrama")
-    if isograma(palabra1):
-        print("Es isograma")
+    if heterograma(palabra1):
+        print("Es heterograma")
 
 def palindromo(palabra1 , palabra2):
     print(f"la palabra {palabra1} es palindromo {palabra1 == palabra1[::-1]}")
@@ -63,9 +63,23 @@ def anagrama(palabra1, palabra2):
         return True
     else:
         return False
-    
-def  isograma(palabra1):
+#este no es in isograma por que solo revisa que cada palabra tenga letras diferentes
+def  heterograma(palabra1):
     if len(palabra1) == len(set(palabra1)):
         return True
 
-comprobaciones("amor","roma")
+def isograma(palabra1):
+    diccionario = dict() #creamos un diccionario vacio 
+    for letra in palabra1: #Recorre la palabra para contar letras y agregarlas al diccionario
+        diccionario[letra] = diccionario.get(letra,0) + 1
+
+    isograma = True #Comenzamos diciendo que si es isograma si no se cumple la condicion se cambia a False
+    listaDict = list(diccionario.values()) # Lista de los valores del diccionario 
+    longitud = listaDict[0] # cantidad de veces que se repite la letra
+
+    for contadaor in listaDict: #Recorremos la lista de valores del diccionario
+        if contadaor != longitud: #si son diferentes los contadores no es isograma
+            isograma = False #cambiamos a false 
+    return isograma
+
+comprobaciones("amor","roma") 
