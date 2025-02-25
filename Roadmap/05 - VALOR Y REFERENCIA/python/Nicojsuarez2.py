@@ -28,3 +28,54 @@ Sigue las **[instrucciones](../../README.md)**, consulta las correcciones y apor
 
 > Recuerda que cada semana se publica un nuevo ejercicio y se corrige el de la semana anterior en directo desde **[Twitch](https://twitch.tv/mouredev)**. Tienes el horario en la sección "eventos" del servidor de **[Discord](https://discord.gg/mouredev)**.
 '''
+# Valor
+
+mi_int = 10
+mi_int2 = mi_int
+mi_int2 = 20
+print(mi_int)
+print(mi_int2)
+
+mi_tupla = (10, 20)
+mi_tupla2 = mi_tupla
+mi_tupla2 = (20, 30)
+print(mi_tupla)
+print(mi_tupla2)
+
+mi_string = "Hola"
+mi_string2 = mi_string
+mi_string2 = "Adios"
+print(mi_string)
+print(mi_string2)
+
+
+# Referencia
+
+mi_lista = [10, 20] 
+mi_lista2 = mi_lista
+mi_lista2.append(30)
+print(mi_lista)
+print(mi_lista2)
+
+
+mi_diccionario = {"nombre": "Nico", "edad": 30}
+mi_diccionario2 = mi_diccionario
+mi_diccionario2["nombre"] = "Juan"
+print(mi_diccionario)
+print(mi_diccionario2)
+
+
+# Funciones por valor y por referencia 
+
+def funcion_valor(int1:int, int2:int):
+    int1 = int2
+    int2 = 3
+    return print(f"Este es el int 1 = {int1}, este es el int2 = {int2}")
+
+def funcion_referencia(lista1:list, lista2:list):
+    lista1 = lista2
+    lista1.append(30)
+    return print(f"esta es la lista 1 = {lista1}, esta es la lista 2 = {lista2}")
+
+funcion_valor(1, 2)
+funcion_referencia([1, 2], [3, 4])
